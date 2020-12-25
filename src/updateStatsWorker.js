@@ -13,11 +13,10 @@ require('./db/mongoose');
                 if (requestData.result) {
                     profiles[i].stats = requestData.result;
                     await profiles[i].save();
-                    console.log(profiles[i].nickname);
                 }
             }
         } catch (e) {
-            console.log(e);
+            console.log(e.message);
         }
 
         await delay(2 * 60000);
